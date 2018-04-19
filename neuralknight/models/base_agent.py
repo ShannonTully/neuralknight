@@ -247,12 +247,26 @@ class BaseAgent:
         #     (50, 50, 50, 50, 50, 50, 50, 50),
         # )
         # Piece values
-        pawn_val = 100
-        knight_val = 320
-        bishop_val = 330
-        rook_val = 500
-        queen_val = 9000
-        king_val = 20000
+        # pawn_val = 100
+        # knight_val = 320
+        # bishop_val = 330
+        # rook_val = 500
+        # queen_val = 9000
+        # king_val = 20000
+
+        own_pawn_val = 100
+        own_knight_val = 320
+        own_bishop_val = 330
+        own_rook_val = 500
+        own_queen_val = 9000
+        own_king_val = 20000
+
+        opp_pawn_val = -100
+        opp_knight_val = -320
+        opp_bishop_val = -330
+        opp_rook_val = -500
+        opp_queen_val = -9000
+        opp_king_val = -20000
 
         # pylama:ignore=E201,E203,E231
         # Piece squares - from http://www.chessbin.com/post/Piece-Square-Table
@@ -392,19 +406,19 @@ class BaseAgent:
 
         # Pair encoded pieces to values
         value_map = {
-            'OWN_PAWN': (pawn_val, own_pawn_squares),
-            'OWN_KNIGHT': (knight_val, own_knight_squares),
-            'OWN_BISHOP': (bishop_val, own_bishop_squares),
-            'OWN_ROOK': (rook_val, own_rook_squares),
-            'OWN_QUEEN': (queen_val, own_queen_squares),
-            'OWN_KING': (king_val, own_king_squares),
+            'OWN_PAWN': (own_pawn_val, own_pawn_squares),
+            'OWN_KNIGHT': (own_knight_val, own_knight_squares),
+            'OWN_BISHOP': (own_bishop_val, own_bishop_squares),
+            'OWN_ROOK': (own_rook_val, own_rook_squares),
+            'OWN_QUEEN': (own_queen_val, own_queen_squares),
+            'OWN_KING': (own_king_val, own_king_squares),
 
-            'OPP_PAWN': (-pawn_val, opp_pawn_squares),
-            'OPP_KNIGHT': (-knight_val, opp_knight_squares),
-            'OPP_BISHOP': (-bishop_val, opp_bishop_squares),
-            'OPP_ROOK': (-rook_val, opp_rook_squares),
-            'OPP_QUEEN': (-queen_val, opp_queen_squares),
-            'OPP_KING': (-king_val, opp_king_squares),
+            'OPP_PAWN': (opp_pawn_val, opp_pawn_squares),
+            'OPP_KNIGHT': (opp_knight_val, opp_knight_squares),
+            'OPP_BISHOP': (opp_bishop_val, opp_bishop_squares),
+            'OPP_ROOK': (opp_rook_val, opp_rook_squares),
+            'OPP_QUEEN': (opp_queen_val, opp_queen_squares),
+            'OPP_KING': (opp_king_val, opp_king_squares),
 
             'EMPTY_SPACE': (0, zero_squares),
         }

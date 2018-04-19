@@ -98,6 +98,7 @@ class CLIAgent(Cmd):
         board[args[1]][args[0]] = SELECTED_PIECE.format(
             board[args[1]][args[0]])
         print_board(map(' '.join, board))
+        import pdb; pdb.set_trace()
         print(f'Selected: { PIECE_NAME[piece] }')
 
     def do_move(self, arg_str):
